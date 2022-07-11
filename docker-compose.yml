@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  db-core:
+    image: postgres:13
+    container_name: todo-db-core
+    environment:
+      - POSTGRES_USER=core
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=core
+    ports:
+      - 5432:5432

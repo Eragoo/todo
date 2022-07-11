@@ -1,0 +1,56 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.Eragoo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 11
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+bootJar {
+	archiveName = "core.jar"
+}
+
+repositories {
+	mavenCentral { url "https://repo.osgeo.org/repository/release/" }
+	mavenCentral()
+	mavenCentral { url "https://repo.spring.io/snapshot" }
+	mavenCentral { url "https://repo.spring.io/milestone" }
+	mavenCentral { url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+}
+dependencies {
+	compile 'org.apache.commons:commons-imaging:1.0-alpha2'
+	compile 'commons-io:commons-io:2.11.0'
+	compile 'org.apache.commons:commons-collections4:4.4'
+	compile "org.apache.commons:commons-lang3"
+
+	compile "io.springfox:springfox-bean-validators:2.9.2"
+	compile "io.springfox:springfox-swagger2:2.9.2"
+	compile "io.springfox:springfox-swagger-ui:2.9.2"
+	
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.springframework.boot:spring-boot-starter-validation'
+	compile ('org.springframework.boot:spring-boot-starter-web') {
+		exclude module: "spring-boot-starter-tomcat"
+	}
+	compile "org.springframework.boot:spring-boot-starter-jetty"
+
+	implementation 'org.flywaydb:flyway-core'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
+	
+	annotationProcessor "org.hibernate:hibernate-jpamodelgen"
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
