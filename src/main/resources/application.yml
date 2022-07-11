@@ -23,3 +23,4 @@ spring:
     show-sql: false
   flyway:
     out-of-order: false
+    enabled: false

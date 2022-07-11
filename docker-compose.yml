@@ -2,6 +2,7 @@ version: "3.7"
 services:
   app-core:
     build: .
+    container_name: todo-app-core
     environment:
       - DB_PASS=pass
     ports:
