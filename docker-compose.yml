@@ -1,5 +1,11 @@
 version: "3.7"
 services:
+  app-core:
+    build: .
+    environment:
+      - DB_PASS=pass
+    ports:
+      - 8000:8000
   db-core:
     image: postgres:13
     container_name: todo-db-core
