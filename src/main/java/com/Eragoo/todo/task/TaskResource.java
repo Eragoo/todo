@@ -35,4 +35,9 @@ public class TaskResource {
     public TaskOutputDto create(@RequestBody @Valid TaskInputDto taskInputDto) {
         return taskService.createTask(taskInputDto);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@RequestParam Long id) {
+        taskService.delete(id);
+    }
 }

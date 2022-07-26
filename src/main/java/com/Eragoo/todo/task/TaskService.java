@@ -43,4 +43,11 @@ public class TaskService {
 
         return new TaskOutputDto(task);
     }
+
+    @Transactional
+    public void delete(Long id) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Task with id " + id + " not found!"));
+        taskRepository.delete(task);
+    }
 }
