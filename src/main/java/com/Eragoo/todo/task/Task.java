@@ -28,6 +28,7 @@ public class Task {
     private String content;
 
     private Instant createdAt;
+    private int status = 0;
 
     private Instant updatedAt;
 
@@ -35,11 +36,13 @@ public class Task {
         this.name = dto.getName();
         this.content = dto.getContent();
         this.createdAt = Instant.now();
+        this.status = dto.getStatus();
     }
 
     public void update(TaskInputDto dto) {
         this.name = dto.getName();
         this.content = dto.getContent();
         this.updatedAt = Instant.now();
+        this.status = dto.getStatus();
     }
 }

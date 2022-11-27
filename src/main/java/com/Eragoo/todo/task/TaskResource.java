@@ -26,7 +26,7 @@ public class TaskResource {
         return taskService.getTask(id);
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public TaskOutputDto update(@PathVariable Long id, @RequestBody @Valid TaskInputDto taskInputDto) {
         return taskService.update(id, taskInputDto);
     }
