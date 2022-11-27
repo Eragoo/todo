@@ -14,7 +14,7 @@ spring:
     open-in-view: false
     database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     properties:
       hibernate:
         jdbc:
@@ -23,4 +23,4 @@ spring:
     show-sql: false
   flyway:
     out-of-order: false
-    enabled: false
+    enabled: true

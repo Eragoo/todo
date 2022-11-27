@@ -22,7 +22,7 @@ public class TaskResource {
     }
 
     @GetMapping("/{id}")
-    public TaskOutputDto get(@RequestParam Long id) {
+    public TaskOutputDto get(@PathVariable Long id) {
         return taskService.getTask(id);
     }
 
@@ -34,5 +34,10 @@ public class TaskResource {
     @PostMapping
     public TaskOutputDto create(@RequestBody @Valid TaskInputDto taskInputDto) {
         return taskService.createTask(taskInputDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        taskService.delete(id);
     }
 }
