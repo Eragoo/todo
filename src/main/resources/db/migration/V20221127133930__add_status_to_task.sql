@@ -1,0 +1,1 @@
+alter table task add column status int not null default 0;
