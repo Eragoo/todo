@@ -2,6 +2,7 @@ package com.Eragoo.todo.task;
 
 
 import com.Eragoo.todo.task.dto.TaskInputDto;
+import com.Eragoo.todo.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,17 +27,19 @@ public class Task {
     private String name;
 
     private String content;
-
+    @ManyToOne
+    private User createdBy;
     private Instant createdAt;
     private int status = 0;
 
     private Instant updatedAt;
 
-    public Task(TaskInputDto dto) {
+    public Task(TaskInputDto dto, User user) {
         this.name = dto.getName();
         this.content = dto.getContent();
         this.createdAt = Instant.now();
         this.status = dto.getStatus();
+        this.createdBy = user;
     }
 
     public void update(TaskInputDto dto) {

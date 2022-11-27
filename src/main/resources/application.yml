@@ -24,3 +24,9 @@ spring:
   flyway:
     out-of-order: false
     enabled: true
+
+
+application:
+  security:
+    signature: ${SIGNATURE:key}
+    lifetime: 7d

@@ -1,7 +1,7 @@
 package com.Eragoo.todo.task.dto;
 
 import com.Eragoo.todo.task.Task;
-import lombok.AllArgsConstructor;
+import com.Eragoo.todo.user.dto.UserOutputDto;
 import lombok.Getter;
 
 import java.time.Instant;
