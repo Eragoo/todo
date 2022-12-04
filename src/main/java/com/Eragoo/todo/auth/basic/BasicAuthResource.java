@@ -1,10 +1,7 @@
 package com.Eragoo.todo.auth.basic;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth/basic")
@@ -13,7 +10,7 @@ public class BasicAuthResource {
     private BasicAuthService service;
 
 
-    @PostMapping("/token")
+    @GetMapping("/token")
     public String getJwtTokenByUsernamePassword(@RequestBody UserAuthInputDto command) {
         return service.getToken(command);
     }
