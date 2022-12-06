@@ -11,6 +11,7 @@ public class TaskOutputDto {
     private final Long id;
     private final String name;
     private final String content;
+    private final int status;
     private final Instant createdAt;
     private final Instant updatedAt;
 
@@ -18,6 +19,7 @@ public class TaskOutputDto {
         this.id = task.getId();
         this.name = task.getName();
         this.content = task.getContent();
+        this.status = task.getStatus();
         this.createdAt = task.getCreatedAt();
         this.updatedAt = task.getUpdatedAt();
     }

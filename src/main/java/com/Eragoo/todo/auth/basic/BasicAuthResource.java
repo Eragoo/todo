@@ -10,7 +10,7 @@ public class BasicAuthResource {
     private BasicAuthService service;
 
 
-    @GetMapping("/token")
+    @PostMapping("/token")
     public String getJwtTokenByUsernamePassword(@RequestBody UserAuthInputDto command) {
         return service.getToken(command);
     }
