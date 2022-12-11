@@ -1,0 +1,1 @@
+alter table task alter column content type text;
